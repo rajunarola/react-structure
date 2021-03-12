@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./assets/scss/admin/custom_admin_style.scss";
+import "./assets/scss/admin/custom_admin_responsive.scss";
+import "./assets/scss/client/custom_client_style.scss";
+import "./assets/scss/client/custom_client_responsive.scss";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./Routes/Routes";
+import AdminRoutes from "./Routes/AdminRoutes";
 
 function App() {
+
+
+  var href = window.location.href;
+  const route = href.match(/([^\/]*)\/*$/)[1];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Suspense fallback={<div></div>}>
+          {route.includes('admin') ?
+            <AdminRoutes /> :
+            <Routes />
+          }
+        </Suspense>
+      </BrowserRouter>
     </div>
   );
 }
