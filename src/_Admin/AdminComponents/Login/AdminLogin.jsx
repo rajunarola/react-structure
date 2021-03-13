@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link, NavLink, withRouter } from 'react-router-dom';
+import { adminClientLogin } from '../../../func';
 
-export default function Login() {
+function AdminLogin(props) {
 
     const useForm = (initialValues, validate) => {
         const [inputs, setInputs] = useState(initialValues);
@@ -12,7 +14,7 @@ export default function Login() {
             const noErrors = Object.keys(validationErrors).length === 0;
             setErrors(validationErrors);
             if (noErrors) {
-                console.log("Authenticated", inputs);
+                adminClientLogin(inputs, props)
             } else {
                 console.log("errors try again", validationErrors);
             }
@@ -41,8 +43,7 @@ export default function Login() {
         ) {
             errors.email = 'Invalid email address';
         }
-
-        // Password Errors
+        //Password Errors
         if (!inputs.password || inputs.password.length < 6) {
             errors.password = 'Check Password'
         }
@@ -53,6 +54,10 @@ export default function Login() {
 
     return (
         <div>
+            <NavLink to={`/admin-login-antd`}>Login Via Antd</NavLink>
+            <NavLink to="/admin-login-formik">Login Via Formik and Yup</NavLink>
+            <h3>This is Normal Login</h3>
+
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Email Address</label>
@@ -69,3 +74,4 @@ export default function Login() {
         </div>
     )
 }
+export default withRouter(AdminLogin)

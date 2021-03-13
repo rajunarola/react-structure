@@ -1,12 +1,12 @@
 import React, { Suspense } from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./assets/scss/admin/custom_admin_style.scss";
 import "./assets/scss/admin/custom_admin_responsive.scss";
 import "./assets/scss/client/custom_client_style.scss";
 import "./assets/scss/client/custom_client_responsive.scss";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter } from "react-router-dom";
-import Routes from "./Routes/Routes";
 import AdminRoutes from "./Routes/AdminRoutes";
+import Routes from "./Routes/Routes";
 
 function App() {
 
