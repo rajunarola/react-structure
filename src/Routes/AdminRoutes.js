@@ -3,6 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import AdminLogin from "../_Admin/AdminComponents/Login/AdminLogin";
 import AdminLoginAntd from "../_Admin/AdminComponents/Login/AdminLoginAntd";
 import AdminLoginYupFormik from "../_Admin/AdminComponents/Login/AdminLoginYupFormik";
+import AdminRegister from "../_Admin/AdminComponents/Register/AdminRegister";
+import AdminRegisterAntd from "../_Admin/AdminComponents/Register/AdminRegisterAntd";
+import AdminRegisterYupFormik from "../_Admin/AdminComponents/Register/AdminRegisterYupFormik";
 import AdminSideNav from "../_Admin/_AdminLayout/AdminSideNav/AdminSideNav";
 import AdminFooter from "../_Admin/_AdminLayout/MainComponent/AdminFooter";
 import AdminHeader from "../_Admin/_AdminLayout/MainComponent/AdminHeader";
@@ -19,6 +22,9 @@ class AdminRoutes extends React.PureComponent {
                 <Route path="/admin-login" exact component={AdminLogin} />
                 <Route path="/admin-login-antd" exact component={AdminLoginAntd} />
                 <Route path="/admin-login-formik" exact component={AdminLoginYupFormik} />
+                <Route path="/admin-register" exact component={AdminRegister} />
+                <Route path="/admin-register-antd" exact component={AdminRegisterAntd} />
+                <Route path="/admin-register-formik" exact component={AdminRegisterYupFormik} />
                 <section className="admin_main_section">
                     <div className="part_one">
                         <AdminSideNav />

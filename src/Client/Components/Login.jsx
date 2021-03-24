@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { withRouter } from 'react-router';
 
-export default function Login() {
+function Login(props) {
+    console.log('props.history => ', props.history);
 
     const useForm = (initialValues, validate) => {
         const [inputs, setInputs] = useState(initialValues);
@@ -12,6 +14,7 @@ export default function Login() {
             const noErrors = Object.keys(validationErrors).length === 0;
             setErrors(validationErrors);
             if (noErrors) {
+                props.history.push(`/client-dashboard`)
                 console.log("Authenticated", inputs);
             } else {
                 console.log("errors try again", validationErrors);
@@ -55,7 +58,7 @@ export default function Login() {
         <div>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Email Address</label>
+                    <label>Email Address1</label>
                     <input className="form-control" type="email" name="email" onChange={handleInputChange} value={inputs.email} required />
                 </div>
                 {errors.email && <p>errors.email</p>}
@@ -69,3 +72,5 @@ export default function Login() {
         </div>
     )
 }
+
+export default withRouter(Login)

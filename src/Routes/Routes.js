@@ -1,13 +1,16 @@
 import React, { lazy } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import Login from "../Client/Components/Login";
 import Footer from "../Client/_Layout/Footer";
 import Header from "../Client/_Layout/Header";
-
-const ClientComponent = lazy(() => import("../Client/Components/ClientMainComponent"));
+const ClientMainComponent = lazy(() => import("../Client/Components/ClientMainComponent"));
+const ClientMainComponentAntd = lazy(() => import("../Client/Components/ClientMainComponentAntd"));
+const ClientTableDataViaRedux = lazy(() => import("../Client/Components/ClientTableDataViaRedux"));
 
 export const routesCode = [
-    { path: "/dashboard", exact: true, component: ClientComponent },
+    { path: "/client-dashboard", exact: true, component: ClientMainComponent },
+    { path: "/client-dashboard-antd", exact: true, component: ClientMainComponentAntd },
+    { path: "/client-dashboard-redux", exact: true, component: ClientTableDataViaRedux }
 ];
 
 class Routes extends React.PureComponent {
@@ -16,14 +19,13 @@ class Routes extends React.PureComponent {
 
         return (
             <Switch>
-                <Route to="/" exact component={Login} />
+                <Route path="/" exact component={Login} />
                 <section className="website_main_section">
                     <Header />
                     <>
-                        hi
-                        {/* {routesCode.map((route, i) =>
+                        {routesCode.map((route, i) =>
                             <Route {...route} key={i} />
-                        )} */}
+                        )}
                     </>
                     <Footer />
                 </section>
@@ -32,4 +34,4 @@ class Routes extends React.PureComponent {
     }
 }
 
-export default Routes;
+export default withRouter(Routes);
