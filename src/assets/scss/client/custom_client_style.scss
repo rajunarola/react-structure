@@ -1,0 +1,163 @@
+.ftco-section {
+    padding: 7em 0;
+}
+.wrap {
+    width: 100%;
+    border-radius: 5px;
+}
+.text-wrap {
+    background: linear-gradient(135deg, #f75959 0%, #f35587 100%);
+    color: #fff;
+}
+.login-wrap {
+    position: relative;
+    background: #fff;
+}
+.d-flex {
+    display: flex !important;
+}
+.text-wrap,
+.login-wrap {
+    width: 50%;
+}
+
+.text-wrap .text h2 {
+    font-weight: 900;
+    color: #fff;
+}
+.text-wrap p {
+    font-weight: 900;
+    color: #fff;
+}
+.btn {
+    box-shadow: none !important;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+.btn.btn-primary {
+    border: 1px solid #f35588;
+    color: #fff;
+    background: linear-gradient(135deg, #f75959 0%, #f35587 100%);
+}
+
+.checkbox-primary {
+    color: #f35588;
+}
+.checkbox-wrap {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.form-control {
+    height: 48px;
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+    font-size: 16px;
+    border-radius: 50px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid transparent;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-group .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    font-weight: 700;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.btn.btn-white.btn-outline-white {
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+}
+
+.btn.btn-white {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+
+.social-media {
+    position: relative;
+    width: 100%;
+}
+
+.social-media .social-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.align-items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+
+.justify-content-center {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+
+.checkbox-primary input:checked ~ .checkmark:after {
+    color: #f35588;
+}
+
+.checkbox-wrap input:checked ~ .checkmark:after {
+    display: block;
+    content: "\f14a";
+    font-family: "FontAwesome";
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.checkmark:after {
+    content: "\f0c8";
+    font-family: "FontAwesome";
+    position: absolute;
+    color: rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    margin-top: -4px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.form-group a {
+    color: gray;
+}
